@@ -1,0 +1,19 @@
+{%extends 'layout.html'%} 
+{%block login%}
+<h1>login</h1>
+   <table class="table table-dark">
+   <form method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="username"><br>
+   
+ <input type="password" name="password" placeholder="password"><br>
+ <div>
+    {%for message in messages%}
+    <h3>{{message}}</h3>
+    {%endfor%}
+</div>
+ <button class="btn btn-success" type="submit">login</button>
+   </form>
+   </table>    
+
+   {%endblock login%}
